@@ -83,11 +83,12 @@ namespace Lab2CHM.Calc
             int res = 0;
             double prev = vals[0];
             foreach(var a in vals)
-            {
-                if (Math.Sign(a) != Math.Sign(prev) && a != 0)
-                    res++;
-                prev = a;
-            }
+                if (a != 0)
+                {
+                    if (Math.Sign(a) != Math.Sign(prev) && prev != 0)
+                        res++;
+                    prev = a;
+                }
 
             return res;
         }
